@@ -1,0 +1,116 @@
+
+
+<div class="row" ng-controller="patientDataEntry">
+
+
+                                    <div class="col-md-12">
+                                        <div class="portlet light bordered">
+                                            <div class="portlet-title tabbable-line">
+                                                <div class="caption caption-md">
+                                                    <i class="icon-globe theme-font hide"></i>
+                                                    <span class="caption-subject font-blue-madison bold uppercase">Patient Data Entry</span>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form">
+                                             <div id="loadingwait" ng-show="showLoader">
+															<div id="loadingspinner" style="min-height: 305px;">
+																<center>
+																	<img src="assets/img/spinner.gif"
+																		style="width: 51px; margin-top: 130px;"><br>&nbsp;Loading ..
+																</center>
+															</div>
+														</div>
+                                              <form role="form" id="patientForm" ng-submit="submitForm()" ng-hide="showLoader">
+                                        <div class="form-body">
+                                            <div class="form-group col-md-6">
+                                                <label>First Name</label>
+                                                <div class="input-group"> 
+                                                    <span class="input-group-addon">
+                                                         <i class="fa fa-user "></i>
+                                                    </span>
+                                                    <input type="text" ng-model="form.first_name" name="first_name" class="form-control"  required> </div>
+                                            </div>
+                                             <div class="form-group col-md-6">
+                                                <label>Last Name</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                         <i class="fa fa-user "></i>
+                                                    </span>
+                                                    <input type="text" ng-model="form.last_name" name="last_name" class="form-control"  required> </div>
+                                            </div>
+                                             <div class="form-group col-md-6">
+                                            <!-- <input datetime-picker ng-model="model" date-only /> -->
+                                                 <div class="input-group input-medium date">
+                                                 <label>DOB : </label>
+                                                 <input type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-model="form.dob_string" is-open="popup1.opened" show-button-bar="false" datepicker-options="{showWeeks: false}" required />
+										          <span class="input-group-btn">
+										            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+										          </span>
+                                                <!--  <div uib-datepicker ng-model="" class="well well-sm" ></div> -->
+                                                        <!-- <input type="text" ng-model="form.dob_string"  class="form-control" datetime-picker ng-model="model" date-only data-date-format="dd/MM/yyyy" required>
+                                                        <span class="input-group-btn padding_custom" >
+                                                            <button class="btn default open-datetimepicker" type="button" >
+                                                                <i class="fa fa-calendar"></i>
+                                                            </button>
+                                                        </span> -->
+                                                        
+                                                    </div> 
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="exampleInputPassword1">Age</label>
+                                                <div class="input-group">
+                                                    <input type="number" min="0" class="form-control" ng-model="form.age" required>
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-user font-red"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                           <div class="form-group col-md-6">
+                                                <label>Gender</label>
+                                                <select class="form-control input-small" ng-model="form.gender" required>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                    <option>Prefer not to say</option>
+                                                    
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Phone</label>
+                                                <div class="input-icon input-icon-sm">
+                                                    <i class="fa fa-bell-o"></i>
+                                                    <input type="text" class="form-control input-sm" ng-model="form.phone"  required> </div>
+                                            </div>
+                                            
+                                          
+                                            <div class="form-group col-md-6">
+                                               
+                                            </div>
+                                            
+                                           
+                                           
+                                           
+                                           
+                                            
+                                           
+                                            <div class="form-group">
+                                                <label>General Info </label>
+                                                <textarea class="form-control" rows="3" ng-model="form.info" required></textarea>
+                                            </div>
+                                           
+                                            
+                                           
+                                            
+                                            
+                                            
+                                           
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit"  class="btn blue">Submit</button>
+                                            
+                                        </div>
+                                    </form>
+                                             </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
